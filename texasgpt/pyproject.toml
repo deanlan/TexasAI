@@ -1,0 +1,33 @@
+[project]
+name = "texasgpt"
+version = "0.1.0"
+description = "texasgpt backend service"
+authors = [
+    {name = "deanlan",email = "383123116@qq.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+dependencies = [
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "uvicorn (>=0.34.2,<0.35.0)",
+    "pydantic (>=2.11.4,<3.0.0)",
+    "phevaluator (>=0.5.3.1,<0.6.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "texasgpt"
+version = "0.1.0"
+description = ""
+authors = ["deanlan"]
+packages = [
+    { include = "texasgpt" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+

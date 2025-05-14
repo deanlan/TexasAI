@@ -15,14 +15,14 @@ router = APIRouter()
 
 tables = []  
 
-@router.post("/v1/play_poker/create_table")
+@router.post("/create_table")
 def create_table(request: CreateTableRequest):  
     poker_table = PokerTable(request.player_names)  
     tables.append(poker_table)  
     
     return {"success": True, "table_id": len(tables) - 1} 
 
-@router.post("/v1/play_poker/join_table")
+@router.post("/join_table")
 def join_table(request: JoinTableRequest):  
     if request.table_id >= len(tables) or request.table_id < 0:  
         raise HTTPException(status_code=404, detail="Table not found")  
@@ -33,7 +33,7 @@ def join_table(request: JoinTableRequest):
     return {"success": success, "message": message}  
 
 
-@router.post("/v1/play_poker/start_poker_game")
+@router.post("/start_poker_game")
 def start_poker_game(request: StartPokerGameRequest):
     table_id = request.table_id  
     if table_id >= len(tables) or table_id < 0:  
@@ -57,7 +57,7 @@ def start_poker_game(request: StartPokerGameRequest):
     return Result.succ(deal_response)
 
 
-@router.get("/v1/play_poker/get_game_state")
+@router.get("/get_game_state")
 def get_game_state(table_id: int):  
     if table_id >= len(tables) or table_id < 0:  
         raise HTTPException(status_code=404, detail="Table not found")  
@@ -75,7 +75,7 @@ def get_game_state(table_id: int):
     return Result.succ(game_state_response)
 
 
-@router.post("/v1/play_poker/player_action")
+@router.post("/player_action")
 def playerAction(request: PlayActionRequest):
     print(f"play_action,", request)
     try:

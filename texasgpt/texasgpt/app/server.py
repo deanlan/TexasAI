@@ -10,8 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 
-import sys  
-sys.path.append('../')  
+import sys
 
 from texasgpt._private.config import Config
 from texasgpt._version import version
@@ -67,8 +66,8 @@ def mount_routers(app: FastAPI):
     """Lazy import to avoid high time cost"""
     # from texasgpt.app.knowledge.api import router as knowledge_router
     from texasgpt.app.play_poker.api import router as poker_api
-    app.include_router(poker_api, prefix="/api", tags=["PlayPoker"])
-  
+    app.include_router(poker_api, prefix="/api/v1/play_poker", tags=["PlayPoker"])
+
 
 
 add_exception_handler(app)

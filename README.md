@@ -58,23 +58,27 @@ TexasAI/
 ```bash
 git clone <your-repository-url>
 cd TexasAI
+```
 
-2️⃣ 启动后端服务
+### 2️⃣ 启动后端服务
 
 # 1. start backend service
+```bash
 - `cd texasgpt`
 - `./start.sh`
+```
 
-3️⃣ 启动前端服务
+### 3️⃣ 启动前端服务
 # 2. start frontend service
+```bash
 - `cd web-app`
 - `npm install`
 - `npm run dev`
+```
 
 
 后端默认运行地址：http://localhost:5670
-
 前端默认运行地址：http://localhost:3000
 
-📝 License
+### 📝 License
 本项目使用 MIT License 开源协议发布。

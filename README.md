@@ -34,7 +34,7 @@ TexasAI/
 
 - ✅ Python 3.9 ~ 3.12
 - ✅ [Poetry](https://python-poetry.org/)（用于 Python 依赖管理）
-- ✅ Node.js 和 npm（用于前端开发）
+- ✅ Node.js 和 pnpm（用于前端开发）
 - ✅ Git
 
 ---
@@ -64,16 +64,16 @@ cd TexasAI
 
 # 1. start backend service
 ```bash
-- `cd texasgpt`
-- `./start.sh`
+cd texasgpt
+./start.sh
 ```
 
 ### 3️⃣ 启动前端服务
 # 2. start frontend service
 ```bash
-- `cd web-app`
-- `npm install`
-- `npm run dev`
+cd web-app
+pnpm install
+pnpm dev
 ```
 
 

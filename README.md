@@ -65,6 +65,7 @@ cd TexasAI
 # 1. start backend service
 ```bash
 cd texasgpt
+cp.env.example.env
 ./start.sh
 ```
 
@@ -72,6 +73,7 @@ cd texasgpt
 # 2. start frontend service
 ```bash
 cd web-app
+cp .env.example .env
 pnpm install
 pnpm dev
 ```

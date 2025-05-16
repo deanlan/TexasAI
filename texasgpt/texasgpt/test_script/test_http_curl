@@ -1,0 +1,14 @@
+
+curl -X POST -H "Content-Type: application/json" -d '{ "player_names": ["Aic"] }' http://localhost:8000/api/v1/play_poker/create_table
+
+
+curl -X POST "http://localhost:8000/api/v1/play_poker/join_table" \
+     -H "Content-Type: application/json" \
+     -d '{"player_name": "Bot", "is_bot": true, "table_id": 0}'
+
+
+curl -X POST -H "Content-Type: application/json" -d '{ "table_id": 0 }' http://localhost:8000/api/v1/play_poker/start_poker_game 
+
+
+
+curl -X GET "http://localhost:8000/api/v1/play_poker/get_game_state?table_id=0" | python -m json.tool

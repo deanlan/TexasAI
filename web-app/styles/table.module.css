@@ -285,20 +285,24 @@
     font-weight: bold; /* 文字加粗 */  
   }  
 
-
+  
   .modalContent {
-    position: relative;
+    position: fixed; /* 让它脱离文档流，相对于视口定位 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 精确居中 */
     background-color: rgba(233, 236, 236, 0.967);
-    color: #333; /* Adjust text color here */
-    padding: 10px;
+    color: #333;
+    padding: 20px;
     border-radius: 10px;
-    width: 900px;
-    max-width: 70%;
-    text-align: 85%;
+    width: 600px;
+    max-width: 90%;
+    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: -250px; /* Move the modal content up */
+    z-index: 1000; /* 确保覆盖其他内容 */
   }
   
+
   .closeButton {
     background-color: #0070f3;
     color: white;
